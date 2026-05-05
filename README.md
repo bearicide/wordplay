@@ -1,254 +1,84 @@
-# 🎛️🐻 WORDPLAY by MATTBEAR
+# WORDPLAY Album Site
 
-**A gritty neon album portal, arcade shrine, and browser-based chaos machine.**
+Single-page MATTBEAR album portal for WORDPLAY.
 
-WORDPLAY is a single-page album site for MATTBEAR featuring a bold visual landing page, SoundCloud embed, mini audio player, portal links, and an entertainment-only slot machine called **WORDSLOTS**.
+## Includes
 
-No login.
-No subscription.
-No casino.
-No real money.
-Just music, visuals, noise, and carefully planned eventuality.
+- Gritty neon album landing page
+- Cover artwork asset
+- Links to the main Bearicide portal
+- Link to the All Fall Down portal
+- Embedded SoundCloud player
+- Entertainment-only WORDSLOTS slot machine
+- Target RTP label: 94%
+- Free spins profile label: 99.4%
+- Three pot system:
+  - Left jackpot pot
+  - Middle free spins pot with two bonus spinners
+  - Right jackpot pot
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## Important
 
-## 🌈 WHAT THIS SITE INCLUDES
+The slot machine is a simulated promotional game only. It has no real-money gambling, no cash value, and no redemption.
 
-✅ WORDPLAY album landing page
-✅ Gritty neon visual design
-✅ MATTBEAR artwork
-✅ Embedded SoundCloud player
-✅ Mini audio player
-✅ Included track: `Concrete Psalm - mattbear edit 2.mp3`
-✅ Link to main Bearicide portal
-✅ Link to All Fall Down portal
-✅ WORDSLOTS fake-money slot machine
-✅ Loud obnoxious slot sound effects
-✅ SFX ON/OFF toggle
-✅ Mobile-friendly layout
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## Update Notes
 
-## 🔗 LIVE LINKS USED
+This version adds:
 
-**Main Portal**
-https://bearicide.github.io/
+- Obnoxious synthesized slot-machine sound effects
+- SFX toggle button
+- Mini audio player
+- Included track: `Concrete Psalm - mattbear edit 2.mp3`
 
-**All Fall Down Portal**
-https://bearicide.github.io/mattbear-allfalldown/
+The slot SFX are intentionally loud and ridiculous. User volume control remains the responsibility of the human piloting the chaos sled.
 
-**SoundCloud**
-https://soundcloud.com/mattbear86
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## Mobile Optimization Pass
 
-## 🎰 WORDSLOTS
+This build includes a dedicated phone layout pass:
 
-WORDSLOTS is a simulated promotional slot-machine toy built into the album site.
+- Tighter mobile navigation
+- Better stacked hero layout
+- Smaller reels and slot symbols on phones
+- Touch-friendly spin button
+- Mobile-safe miniplayer
+- Reduced slot-machine badge clutter on narrow screens
+- Better spacing for SoundCloud and footer content
 
-It uses fake credits only.
 
-It has no cash value.
+## Final Checked Update
 
-It is not gambling.
+This version adds and verifies:
 
-It is not connected to real money.
+- Mini-player audio set to loop automatically after the user presses play
+- Audio preload changed to `auto`
+- Slot SFX routed through a compressor/limiter to reduce clipping
+- Bet input safely clamps to 10-100 in steps of 10
+- Reset button added for demo credits
+- Mobile layout retained
+- Assets verified in package
 
-It is just a loud little browser gremlin pretending to be a slot machine for album promo purposes.
+Suggested future improvements:
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Add custom MP3/WAV slot sound files instead of generated synth beeps
+- Add album tracklist cards
+- Add a dedicated lyric/manifesto section
+- Add cover-art download buttons
+- Add a share button for Facebook posts
+- Add a low-sensory mode for users who want the visuals without the slot chaos
 
-## 📊 SLOT FEATURES
 
-• 5 reels
-• 3 rows
-• Center-line symbol matching
-• Scatter symbols
-• Free spins
-• Three pot system
-• Jackpot spinners
-• Spin log
-• Credit counter
-• Total win counter
-• Loud synthetic sound effects
-• SFX toggle
+## All Lines Motion RTP Mini Choppa Update
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+This build adds:
 
-## 🫙 THREE POTS SYSTEM
-
-### Left Pot
-
-The left pot triggers a jackpot spinner with:
-
-• Mini
-• Major
-• Mega
-• Ultra
-
-### Middle Pot
-
-The middle pot controls the free-spin bonus.
-
-Trigger condition:
-
-• 5 scatters = 10 free spins
-
-Bonus behavior:
-
-• Free spins activate
-• Two jackpot-style bonus spinners fire during the bonus
-
-### Right Pot
-
-The right pot triggers another jackpot spinner with:
-
-• Mini
-• Major
-• Mega
-• Ultra
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## 📈 RTP LABELS
-
-The site displays:
-
-• Overall target RTP: **94%**
-• Free spins profile: **99.4%**
-
-These are for entertainment simulation and promotional flavor only.
-
-This is not a regulated gambling product, not a casino game, and not a real-money wagering system.
-
-Because apparently we have to say the obvious before someone tries to cash out browser credits at a gas station.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## 🔊 SOUND FEATURES
-
-The slot machine includes loud synthesized sound effects for:
-
-• Spin start
-• Reel stops
-• Wins
-• Losses
-• Scatter hits
-• Jackpot hits
-
-There is also a toggle button:
-
-**SLOT SFX: ON / OFF**
-
-Use it if the machine gets too obnoxious, which it absolutely tries to do.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## 🎵 MINI PLAYER
-
-The bottom mini-player includes:
-
-`Concrete Psalm - mattbear edit 2.mp3`
-
-Controls:
-
-• Play / pause
-• Seek bar
-• Track display
-
-Browser audio may require user interaction before playback starts.
-
-That is not a bug. That is browsers acting like tiny permission goblins.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## 📁 FILE STRUCTURE
-
-```text
-MATTBEAR - WORDPLAY Album Site/
-├── index.html
-├── README.md
-└── assets/
-    ├── Concrete Psalm - mattbear edit 2.mp3
-    └── mattbear-ameliorist.png
-```
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## 🚀 HOW TO UPLOAD TO GITHUB PAGES
-
-1. Create a new GitHub repository.
-2. Upload everything inside the project folder.
-3. Make sure `index.html` stays in the root of the repo.
-4. Go to **Settings**.
-5. Open **Pages**.
-6. Choose **Deploy from branch**.
-7. Select the `main` branch.
-8. Choose `/root`.
-9. Save.
-10. Wait for GitHub to generate the live link.
-
-Your site will usually appear at:
-
-```text
-https://yourusername.github.io/repository-name/
-```
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## 🧪 BEST TESTING CHECKLIST
-
-After uploading, test:
-
-• Page loads
-• Artwork appears
-• SoundCloud embed appears
-• Main portal link works
-• All Fall Down link works
-• Mini-player plays after clicking
-• Slot spin button works
-• SFX toggle works
-• Free spins counter works
-• Page works on mobile
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## ⚠️ IMPORTANT DISCLAIMER
-
-WORDSLOTS is an entertainment-only simulation.
-
-No real money is used.
-
-No prizes are awarded.
-
-No credits can be redeemed.
-
-No gambling service is offered.
-
-This project is for album promotion, interactive art, and browser-based nonsense with structure.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## 🌈 CREDITS
-
-Created by **MATTBEAR**
-
-Digital Creator | Creative Systems | Chaos → Signal
-
-Website: https://bearicide.github.io
-SoundCloud: https://soundcloud.com/mattbear86
-Suno: https://suno.com/@mattbear86
-Instagram: https://instagram.com/mattbearig
-Facebook: https://facebook.com/mattbear
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## 🐻 FINAL WORD
-
-WORDPLAY is music, language, grit, and arcade noise folded into one browser page.
-
-Chaos is not random destruction.
-
-Chaos is planned eventuality.
-
-MATTBEAR turns chaos into signal.
+- 10-payline slot evaluation instead of center-line-only wins
+- RTP slider from 80% to 99.4%, defaulting to 94%
+- Motion on site buttons
+- Touch and mouse-friendly controls
+- Laughing popups, shaking machine effects, flashing win messages
+- Extra reel madness / symbol animation during spins
+- Pot hit animation
+- Mini Choppa built into the page
+- Mini Choppa has 8 pads, loop upload, demo loop, waveform, pitch, volume, release, touch/mouse/keyboard control

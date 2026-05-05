@@ -1,0 +1,2168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>WORDPLAY | MATTBEAR</title>
+<meta name="description" content="WORDPLAY by MATTBEAR - gritty neon album portal with SoundCloud, links, and a simulated 94% RTP slot machine." />
+<style>
+:root{
+  --bg:#050509;
+  --ink:#f8fbff;
+  --muted:#b9c0cc;
+  --glass:rgba(255,255,255,.075);
+  --glass2:rgba(255,255,255,.12);
+  --line:rgba(255,255,255,.16);
+  --black:#020204;
+  --red:#ff2e51;
+  --orange:#ff8c1a;
+  --yellow:#ffe850;
+  --green:#35ff86;
+  --cyan:#31eaff;
+  --blue:#5278ff;
+  --violet:#b14cff;
+  --pink:#ff3bdc;
+  --gold:#ffd66b;
+  --danger:#ff466a;
+  --good:#44ff9c;
+  --grad:linear-gradient(90deg,var(--red),var(--orange),var(--yellow),var(--green),var(--cyan),var(--blue),var(--violet),var(--pink));
+  --grit:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170' viewBox='0 0 170 170'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='170' height='170' filter='url(%23n)' opacity='.34'/%3E%3C/svg%3E");
+  --font-display:"Impact","Arial Black","Bahnschrift Condensed","Anton",sans-serif;
+  --font-body:Bahnschrift,"Arial Narrow",Arial,sans-serif;
+  --font-weird:"Courier New",monospace;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:var(--font-body);
+  background:
+    radial-gradient(circle at 15% 10%,rgba(255,46,81,.25),transparent 32%),
+    radial-gradient(circle at 78% 5%,rgba(49,234,255,.22),transparent 30%),
+    radial-gradient(circle at 50% 82%,rgba(177,76,255,.18),transparent 34%),
+    linear-gradient(180deg,#06060b 0%,#11111b 45%,#050509 100%);
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:var(--grit);
+  opacity:.16;
+  mix-blend-mode:screen;
+  z-index:0;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:38px 38px;
+  mask-image:radial-gradient(circle at center,black,transparent 78%);
+  opacity:.25;
+  z-index:0;
+}
+
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+.wrap{width:min(1180px,calc(100% - 28px));margin:0 auto;position:relative;z-index:2}
+
+.rainbow-text{
+  background:var(--grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  text-shadow:0 0 24px rgba(255,255,255,.12);
+}
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter:blur(16px);
+  background:rgba(3,3,7,.82);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+
+.brand-mark{
+  width:48px;
+  height:48px;
+  border-radius:15px;
+  background:var(--grad);
+  position:relative;
+  box-shadow:0 0 28px rgba(49,234,255,.2);
+  transform:rotate(-4deg);
+}
+
+.brand-mark::after{
+  content:"W";
+  position:absolute;
+  inset:3px;
+  border-radius:12px;
+  background:#08080d;
+  display:grid;
+  place-items:center;
+  font-family:var(--font-display);
+  font-size:26px;
+}
+
+.brand-copy strong{
+  display:block;
+  font-family:var(--font-display);
+  letter-spacing:.08em;
+  font-size:1.25rem;
+  line-height:1;
+}
+
+.brand-copy span{
+  display:block;
+  color:var(--muted);
+  font-size:.75rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-top:4px;
+}
+
+.navlinks{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  gap:8px;
+}
+
+.navlinks a{
+  padding:11px 12px;
+  border:1px solid transparent;
+  border-radius:999px;
+  color:var(--muted);
+  font-size:.86rem;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  transition:.2s ease;
+}
+
+.navlinks a:hover{
+  color:#fff;
+  border-color:var(--line);
+  background:rgba(255,255,255,.07);
+  box-shadow:0 0 22px rgba(49,234,255,.15);
+}
+
+.hero{
+  padding:46px 0 22px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.02fr .98fr;
+  gap:22px;
+  align-items:center;
+}
+
+.poster-shell{
+  position:relative;
+  border:1px solid var(--line);
+  border-radius:30px;
+  padding:12px;
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.04)),
+    var(--grad);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.5),
+    0 0 60px rgba(49,234,255,.16),
+    0 0 80px rgba(255,59,220,.12);
+  transform:rotate(-1deg);
+}
+
+.poster-shell::before{
+  content:"";
+  position:absolute;
+  inset:-8px;
+  border-radius:36px;
+  border:1px dashed rgba(255,255,255,.24);
+  opacity:.6;
+  pointer-events:none;
+}
+
+.poster{
+  width:100%;
+  border-radius:22px;
+  display:block;
+  border:1px solid rgba(0,0,0,.62);
+}
+
+.hero-copy{
+  padding:24px;
+  border-radius:30px;
+  border:1px solid var(--line);
+  background:
+    radial-gradient(circle at top left,rgba(255,46,81,.16),transparent 34%),
+    radial-gradient(circle at bottom right,rgba(49,234,255,.16),transparent 36%),
+    rgba(255,255,255,.055);
+  box-shadow:0 25px 70px rgba(0,0,0,.34);
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-copy::before{
+  content:"";
+  position:absolute;
+  left:-15%;
+  top:16%;
+  width:130%;
+  height:16px;
+  background:var(--grad);
+  opacity:.38;
+  transform:rotate(-5deg);
+  filter:blur(.2px);
+}
+
+.kicker{
+  position:relative;
+  z-index:1;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:9px 12px;
+  border-radius:999px;
+  background:rgba(0,0,0,.38);
+  border:1px solid var(--line);
+  color:#fff;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-size:.75rem;
+}
+
+h1{
+  position:relative;
+  z-index:1;
+  margin:14px 0 10px;
+  font-family:var(--font-display);
+  font-size:clamp(4rem,11vw,8.9rem);
+  line-height:.78;
+  letter-spacing:-.07em;
+  text-transform:uppercase;
+  filter:drop-shadow(0 0 16px rgba(255,255,255,.13));
+}
+
+.subtitle{
+  position:relative;
+  z-index:1;
+  font-family:var(--font-weird);
+  text-transform:uppercase;
+  letter-spacing:.26em;
+  color:var(--gold);
+  font-weight:900;
+  margin:14px 0 18px;
+}
+
+.lead{
+  position:relative;
+  z-index:1;
+  color:#dce4f3;
+  line-height:1.62;
+  font-size:1.05rem;
+  max-width:700px;
+}
+
+.btnrow{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:22px;
+}
+
+.btn{
+  min-height:52px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:0 18px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  color:#fff;
+  background:rgba(0,0,0,.36);
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  box-shadow:0 12px 30px rgba(0,0,0,.24);
+  transition:.2s ease;
+  cursor:pointer;
+}
+
+.btn:hover{
+  transform:translateY(-2px) scale(1.01);
+  box-shadow:0 18px 34px rgba(0,0,0,.32),0 0 24px rgba(49,234,255,.22);
+}
+
+.btn.primary{
+  background:var(--grad);
+  color:#050509;
+  border:none;
+}
+
+.section{
+  padding:26px 0;
+}
+
+.section-title{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:14px;
+  margin-bottom:18px;
+}
+
+.section-title h2{
+  font-family:var(--font-display);
+  font-size:clamp(2rem,5vw,4.7rem);
+  letter-spacing:-.04em;
+  line-height:.9;
+  text-transform:uppercase;
+  margin:0;
+}
+
+.section-title p{
+  color:var(--muted);
+  max-width:620px;
+  line-height:1.55;
+  margin:0;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.card{
+  border:1px solid var(--line);
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.045)),
+    rgba(0,0,0,.18);
+  border-radius:24px;
+  padding:20px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 18px 40px rgba(0,0,0,.26);
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:5px;
+  background:var(--grad);
+}
+
+.card h3{
+  margin:4px 0 10px;
+  font-size:1.25rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.card p{
+  color:var(--muted);
+  line-height:1.58;
+  margin:0;
+}
+
+.glitch-block{
+  margin-top:16px;
+  padding:18px;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.18);
+  background:
+    linear-gradient(90deg,rgba(255,46,81,.16),rgba(49,234,255,.12),rgba(53,255,134,.12)),
+    rgba(0,0,0,.22);
+  box-shadow:inset 0 0 28px rgba(0,0,0,.24);
+  font-family:var(--font-weird);
+  color:#f2f7ff;
+  line-height:1.6;
+}
+
+.soundcloud-card{
+  border-radius:26px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:0 22px 60px rgba(0,0,0,.36);
+  background:#111;
+}
+
+.soundcloud-card iframe{
+  width:100%;
+  border:0;
+  display:block;
+}
+
+.slot-wrap{
+  display:grid;
+  grid-template-columns:1fr .82fr;
+  gap:18px;
+}
+
+.machine{
+  border-radius:28px;
+  border:1px solid rgba(255,255,255,.18);
+  background:
+    radial-gradient(circle at top,rgba(255,232,80,.16),transparent 32%),
+    linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.055));
+  padding:18px;
+  box-shadow:
+    0 28px 72px rgba(0,0,0,.38),
+    0 0 46px rgba(255,59,220,.13);
+  position:relative;
+  overflow:hidden;
+}
+
+.machine::after{
+  content:"RTP 94% • ENTERTAINMENT ONLY";
+  position:absolute;
+  right:-58px;
+  top:25px;
+  transform:rotate(34deg);
+  padding:7px 58px;
+  background:var(--grad);
+  color:#050509;
+  font-weight:900;
+  font-size:.74rem;
+  letter-spacing:.08em;
+}
+
+.machine-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+  margin-bottom:14px;
+}
+
+.machine-head h2{
+  margin:0;
+  font-family:var(--font-display);
+  font-size:clamp(1.9rem,4vw,3.5rem);
+  line-height:.9;
+  text-transform:uppercase;
+}
+
+.bank{
+  display:grid;
+  gap:4px;
+  text-align:right;
+  color:var(--muted);
+  font-size:.84rem;
+}
+
+.bank strong{
+  color:#fff;
+  font-size:1.4rem;
+}
+
+.reels{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:8px;
+  padding:12px;
+  border-radius:24px;
+  background:#06060a;
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:inset 0 0 30px rgba(0,0,0,.8);
+}
+
+.reel{
+  display:grid;
+  grid-template-rows:repeat(3,82px);
+  gap:7px;
+}
+
+.symbol{
+  display:grid;
+  place-items:center;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.14);
+  background:
+    radial-gradient(circle at top,rgba(255,255,255,.14),transparent 52%),
+    linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
+  font-size:2.15rem;
+  box-shadow:inset 0 -12px 22px rgba(0,0,0,.28);
+  transition:.18s ease;
+}
+
+.symbol.win{
+  outline:3px solid var(--gold);
+  box-shadow:0 0 26px rgba(255,214,107,.45), inset 0 -12px 22px rgba(0,0,0,.28);
+  transform:scale(1.03);
+}
+
+.symbol.scatter{
+  background:
+    radial-gradient(circle at center,rgba(255,216,80,.22),rgba(255,59,220,.09)),
+    rgba(0,0,0,.22);
+}
+
+.slot-controls{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-top:12px;
+}
+
+.panel-control{
+  border-radius:18px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.28);
+  padding:12px;
+}
+
+.panel-control label{
+  display:block;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  font-size:.72rem;
+  margin-bottom:7px;
+}
+
+.panel-control input{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  padding:10px;
+}
+
+.pots{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:12px;
+}
+
+.pot{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:12px;
+  background:rgba(0,0,0,.28);
+  min-height:132px;
+}
+
+.pot h3{
+  margin:0 0 8px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+.pot-value{
+  font-family:var(--font-display);
+  font-size:1.65rem;
+  background:var(--grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.jackpot-list{
+  display:grid;
+  gap:6px;
+  margin-top:8px;
+  color:var(--muted);
+  font-size:.88rem;
+}
+
+.slot-message{
+  min-height:72px;
+  margin-top:12px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:14px;
+  background:rgba(0,0,0,.32);
+  color:#eef2ff;
+  line-height:1.5;
+}
+
+.side-panel{
+  display:grid;
+  gap:14px;
+}
+
+.stat-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.statbox{
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:14px;
+  background:rgba(255,255,255,.055);
+}
+
+.statbox span{
+  display:block;
+  color:var(--muted);
+  font-size:.76rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+
+.statbox strong{
+  display:block;
+  font-size:1.35rem;
+  margin-top:4px;
+}
+
+.spin-log{
+  max-height:265px;
+  overflow:auto;
+  padding-right:6px;
+  display:grid;
+  gap:8px;
+}
+
+.log-item{
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;
+  padding:9px 10px;
+  color:#dfe8ff;
+  background:rgba(0,0,0,.22);
+  font-size:.86rem;
+}
+
+.disclaimer{
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.55;
+}
+
+.footer{
+  padding:34px 0 52px;
+  color:var(--muted);
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+.footer strong{
+  color:#fff;
+}
+
+.pulse{
+  animation:pulse 1.2s ease-in-out infinite alternate;
+}
+
+.shake{
+  animation:shake .25s linear 2;
+}
+
+@keyframes pulse{
+  from{filter:drop-shadow(0 0 5px rgba(255,255,255,.18))}
+  to{filter:drop-shadow(0 0 20px rgba(255,216,80,.58))}
+}
+
+@keyframes shake{
+  0%,100%{transform:translateX(0)}
+  25%{transform:translateX(-4px)}
+  75%{transform:translateX(4px)}
+}
+
+
+.miniplayer{
+  position:fixed;
+  left:14px;
+  right:14px;
+  bottom:14px;
+  z-index:80;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:10px;
+  align-items:center;
+  padding:12px;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(5,5,9,.88);
+  backdrop-filter:blur(14px);
+  box-shadow:0 18px 46px rgba(0,0,0,.42),0 0 30px rgba(255,59,220,.14);
+}
+.mini-btn{
+  width:46px;
+  height:46px;
+  border-radius:15px;
+  border:0;
+  background:var(--grad);
+  color:#050509;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 0 24px rgba(255,255,255,.18);
+}
+.mini-copy{min-width:0}
+.mini-copy strong{
+  display:block;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  font-family:var(--font-display);
+  letter-spacing:.05em;
+}
+.mini-copy span{
+  display:block;
+  color:var(--muted);
+  font-size:.78rem;
+  margin-top:2px;
+}
+.mini-range{width:100%;accent-color:var(--pink)}
+.noise-toggle{
+  min-height:40px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  padding:0 12px;
+  font-weight:900;
+  cursor:pointer;
+  white-space:nowrap;
+}
+body{padding-bottom:92px}
+@media(max-width:680px){
+  .miniplayer{grid-template-columns:auto 1fr;right:9px;left:9px;bottom:9px}
+  .noise-toggle{grid-column:1 / -1;width:100%}
+}
+
+@media(max-width:960px){
+  .hero-grid,.slot-wrap,.cards{grid-template-columns:1fr}
+  .section-title{display:block}
+  .section-title p{margin-top:8px}
+}
+
+@media(max-width:680px){
+  .wrap{width:min(100% - 18px,1180px)}
+  .nav{align-items:flex-start;flex-direction:column}
+  .navlinks{justify-content:flex-start}
+  .hero{padding-top:26px}
+  .hero-copy{padding:18px}
+  .poster-shell{transform:none}
+  .reel{grid-template-rows:repeat(3,62px)}
+  .symbol{font-size:1.65rem;border-radius:14px}
+  .slot-controls{grid-template-columns:1fr 1fr}
+  .pots{grid-template-columns:1fr}
+  .btn{width:100%}
+  .stat-grid{grid-template-columns:1fr}
+}
+
+/* --- MATTBEAR MOBILE POLISH PASS --- */
+@media(max-width:760px){
+  body{padding-bottom:150px}
+  .topbar{position:relative}
+  .nav{min-height:auto;padding:12px 0}
+  .brand-mark{width:42px;height:42px;border-radius:13px}
+  .brand-mark::after{font-size:22px}
+  .brand-copy strong{font-size:1.05rem}
+  .brand-copy span{font-size:.66rem;letter-spacing:.11em}
+  .navlinks{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .navlinks a{width:100%;text-align:center;padding:12px 8px;font-size:.72rem}
+
+  .hero{padding:18px 0}
+  .hero-grid{gap:14px}
+  .hero-copy{border-radius:22px;padding:16px}
+  .poster-shell{padding:8px;border-radius:22px}
+  .poster{border-radius:16px}
+  h1{font-size:clamp(3.2rem,21vw,5.2rem);line-height:.78}
+  .subtitle{font-size:.74rem;letter-spacing:.16em;line-height:1.55}
+  .lead{font-size:.96rem;line-height:1.5}
+  .btnrow{gap:9px}
+  .btn{min-height:48px;border-radius:14px;font-size:.82rem;padding:0 12px}
+
+  .section{padding:18px 0}
+  .section-title h2{font-size:clamp(2.35rem,14vw,4rem)}
+  .section-title p{font-size:.95rem}
+  .card{border-radius:20px;padding:16px}
+  .card h3{font-size:1.05rem}
+  .card p{font-size:.94rem;line-height:1.5}
+
+  .soundcloud-card iframe{height:330px}
+
+  .slot-wrap{gap:14px}
+  .machine{border-radius:22px;padding:12px}
+  .machine::after{display:none}
+  .machine-head{display:grid;grid-template-columns:1fr;gap:8px}
+  .machine-head h2{font-size:2.25rem}
+  .bank{text-align:left;grid-template-columns:1fr 1fr;align-items:end}
+  .bank strong{text-align:right}
+
+  .reels{gap:5px;padding:7px;border-radius:18px}
+  .reel{grid-template-rows:repeat(3,54px);gap:5px}
+  .symbol{font-size:1.35rem;border-radius:12px}
+
+  .slot-controls{grid-template-columns:1fr 1fr;gap:8px}
+  .slot-controls .btn{grid-column:auto}
+  .panel-control{border-radius:14px;padding:10px}
+  .panel-control input{min-height:42px}
+
+  .pots{grid-template-columns:1fr;gap:8px}
+  .pot{min-height:auto;border-radius:16px}
+  .pot-value{font-size:1.45rem}
+  .slot-message{border-radius:16px;font-size:.94rem;min-height:auto}
+
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .spin-log{max-height:180px}
+
+  .miniplayer{
+    grid-template-columns:44px 1fr;
+    left:8px;
+    right:8px;
+    bottom:8px;
+    padding:10px;
+    border-radius:18px;
+  }
+  .mini-btn{width:44px;height:44px;border-radius:14px}
+  .mini-copy strong{font-size:.86rem}
+  .mini-copy span{font-size:.72rem}
+  .noise-toggle{grid-column:1 / -1;width:100%;min-height:38px}
+}
+
+@media(max-width:420px){
+  .reel{grid-template-rows:repeat(3,46px)}
+  .symbol{font-size:1.15rem}
+  .stat-grid{grid-template-columns:1fr}
+  .navlinks{grid-template-columns:1fr}
+  h1{font-size:3.2rem}
+}
+
+
+/* --- MATTBEAR ALL-LINES + MOTION + RTP + MINI CHOPPA PASS --- */
+button, .btn, .symbol, .pot, .card, .mini-btn, .noise-toggle, .navlinks a, input, .mini-pad{
+  touch-action:manipulation;
+}
+
+button, .btn, .mini-btn, .noise-toggle, .navlinks a, .mini-pad{
+  position:relative;
+  overflow:hidden;
+  transform-origin:center;
+  will-change:transform, filter, box-shadow;
+}
+
+button::after, .btn::after, .mini-btn::after, .noise-toggle::after, .navlinks a::after, .mini-pad::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);
+  transform:translateX(-140%);
+  transition:transform .38s ease;
+  pointer-events:none;
+}
+
+button:hover::after, .btn:hover::after, .mini-btn:hover::after, .noise-toggle:hover::after, .navlinks a:hover::after, .mini-pad:hover::after{
+  transform:translateX(140%);
+}
+
+button:hover, .btn:hover, .mini-btn:hover, .noise-toggle:hover, .mini-pad:hover{
+  animation:buttonWobble .42s ease both;
+}
+
+button:active, .btn:active, .mini-btn:active, .noise-toggle:active, .mini-pad:active{
+  transform:scale(.94) rotate(-1deg);
+  filter:saturate(1.35) brightness(1.15);
+}
+
+.payline-note{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:.86rem;
+  line-height:1.45;
+}
+
+.rtp-control{
+  margin-top:12px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:14px;
+  background:rgba(0,0,0,.26);
+}
+
+.rtp-control label{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  color:var(--muted);
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  margin-bottom:8px;
+}
+
+.rtp-control strong{
+  color:#fff;
+  font-size:1rem;
+}
+
+.rtp-control input{
+  width:100%;
+  accent-color:var(--gold);
+}
+
+.laugh-layer{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:5;
+}
+
+.laugh-pop{
+  position:absolute;
+  font-family:var(--font-display);
+  font-size:clamp(1.3rem,4vw,3.8rem);
+  letter-spacing:.05em;
+  background:var(--grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  text-shadow:0 0 22px rgba(255,255,255,.35);
+  animation:laughFly 950ms ease-out forwards;
+  transform:translate(-50%,-50%);
+  white-space:nowrap;
+}
+
+.machine.hysterical{
+  animation:machineLaugh 580ms ease-in-out;
+}
+
+.reels.reel-madness{
+  animation:reelMadness 520ms ease-in-out;
+}
+
+.symbol.spin-blur{
+  animation:symbolBlur .35s linear infinite;
+}
+
+.symbol.big-win{
+  animation:bigWinPulse .7s ease-in-out infinite alternate;
+}
+
+.slot-message.flash-message{
+  animation:messageFlash .65s ease-in-out 2;
+}
+
+.pot.pot-hit{
+  animation:potHit .8s ease-in-out;
+}
+
+/* Mini Choppa */
+.choppa-grid{
+  display:grid;
+  grid-template-columns:1fr .72fr;
+  gap:16px;
+}
+
+.mini-choppa{
+  border:1px solid var(--line);
+  border-radius:26px;
+  padding:18px;
+  background:
+    radial-gradient(circle at top left,rgba(49,234,255,.15),transparent 30%),
+    radial-gradient(circle at bottom right,rgba(255,59,220,.13),transparent 30%),
+    rgba(0,0,0,.25);
+  box-shadow:0 22px 60px rgba(0,0,0,.32);
+}
+
+.mini-choppa h3{
+  margin:0 0 8px;
+  font-family:var(--font-display);
+  font-size:clamp(1.8rem,4vw,3.2rem);
+  text-transform:uppercase;
+  letter-spacing:-.03em;
+}
+
+.choppa-wave{
+  height:92px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:#030306;
+  overflow:hidden;
+  margin:12px 0;
+}
+
+#choppaWave{
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.mini-pads{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  margin-top:10px;
+}
+
+.mini-pad{
+  min-height:74px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.16);
+  background:
+    radial-gradient(circle at top,rgba(255,255,255,.13),transparent 44%),
+    linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+  color:#fff;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  font-weight:900;
+  box-shadow:inset 0 -12px 20px rgba(0,0,0,.28);
+}
+
+.mini-pad span{
+  display:block;
+  font-size:1.2rem;
+}
+
+.mini-pad small{
+  display:block;
+  color:var(--muted);
+  font-size:.72rem;
+  margin-top:3px;
+}
+
+.mini-pad.loaded{
+  outline:1px solid rgba(53,255,134,.4);
+}
+
+.mini-pad.active{
+  background:var(--grad);
+  color:#050509;
+  box-shadow:0 0 30px rgba(255,216,107,.46);
+}
+
+.choppa-controls{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
+
+.choppa-controls .btn{
+  min-height:44px;
+  font-size:.82rem;
+  flex:1;
+}
+
+.choppa-status{
+  color:var(--muted);
+  line-height:1.5;
+  font-size:.92rem;
+  margin-top:10px;
+}
+
+.choppa-side{
+  display:grid;
+  gap:10px;
+}
+
+.choppa-side .panel-control{
+  min-height:auto;
+}
+
+@keyframes buttonWobble{
+  0%{transform:translateY(0) rotate(0)}
+  30%{transform:translateY(-2px) rotate(-1deg)}
+  65%{transform:translateY(-3px) rotate(1deg) scale(1.02)}
+  100%{transform:translateY(-2px) rotate(0)}
+}
+
+@keyframes machineLaugh{
+  0%,100%{transform:translateX(0) rotate(0)}
+  15%{transform:translateX(-7px) rotate(-.55deg)}
+  30%{transform:translateX(8px) rotate(.55deg)}
+  45%{transform:translateX(-6px) rotate(-.4deg)}
+  60%{transform:translateX(5px) rotate(.35deg)}
+  75%{transform:translateX(-3px) rotate(-.2deg)}
+}
+
+@keyframes reelMadness{
+  0%,100%{filter:none;transform:scale(1)}
+  25%{filter:hue-rotate(55deg) saturate(1.7);transform:scale(1.015)}
+  50%{filter:hue-rotate(180deg) saturate(2.2);transform:scale(.99)}
+  75%{filter:hue-rotate(300deg) saturate(1.8);transform:scale(1.02)}
+}
+
+@keyframes symbolBlur{
+  0%{filter:blur(0) brightness(1)}
+  50%{filter:blur(1.2px) brightness(1.45) hue-rotate(80deg)}
+  100%{filter:blur(0) brightness(1)}
+}
+
+@keyframes bigWinPulse{
+  from{transform:scale(1.02) rotate(-1deg);filter:saturate(1.3) brightness(1.1)}
+  to{transform:scale(1.09) rotate(1deg);filter:saturate(2.1) brightness(1.45)}
+}
+
+@keyframes messageFlash{
+  0%,100%{box-shadow:0 0 0 rgba(255,216,107,0)}
+  50%{box-shadow:0 0 35px rgba(255,216,107,.55);background:rgba(255,216,107,.14)}
+}
+
+@keyframes potHit{
+  0%,100%{transform:scale(1) rotate(0)}
+  25%{transform:scale(1.04) rotate(-1deg)}
+  50%{transform:scale(1.08) rotate(1deg)}
+  75%{transform:scale(1.03) rotate(-.5deg)}
+}
+
+@keyframes laughFly{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(.65) rotate(-8deg)}
+  15%{opacity:1}
+  100%{opacity:0;transform:translate(-50%,calc(-50% - 92px)) scale(1.45) rotate(9deg)}
+}
+
+@media(max-width:900px){
+  .choppa-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:520px){
+  .mini-pads{grid-template-columns:repeat(2,1fr)}
+  .mini-pad{min-height:68px}
+}
+
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="WORDPLAY home">
+      <div class="brand-mark"></div>
+      <div class="brand-copy">
+        <strong class="rainbow-text">MATTBEAR</strong>
+        <span>WORDPLAY album portal</span>
+      </div>
+    </a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#listen">listen</a>
+      <a href="#slots">slot</a>
+      <a href="https://bearicide.github.io/" target="_blank" rel="noopener noreferrer">portal</a>
+      <a href="https://bearicide.github.io/mattbear-allfalldown/" target="_blank" rel="noopener noreferrer">all fall down</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="poster-shell">
+        <img class="poster" src="assets/mattbear-ameliorist.png" alt="MATTBEAR Ameliorist trading-card style artwork">
+      </div>
+
+      <div class="hero-copy">
+        <div class="kicker">new album interface</div>
+        <h1><span class="rainbow-text">WORD</span><br>PLAY</h1>
+        <div class="subtitle">grit • neon • language • damage • repair</div>
+        <p class="lead">
+          A loud, grimy, rainbow-stained portal for the new MATTBEAR album.
+          WORDPLAY turns jokes, wounds, noise, and strange little phrases into a whole creative operating system.
+          It is part album page, part arcade shrine, part “why is this CSS doing that” ritual.
+        </p>
+        <div class="btnrow">
+          <a class="btn primary" href="#listen">▶ Listen</a>
+          <a class="btn" href="#slots">🎰 Play WORDSLOTS</a>
+          <a class="btn" href="https://bearicide.github.io/" target="_blank" rel="noopener noreferrer">🐻 Main Portal</a>
+          <a class="btn" href="https://bearicide.github.io/mattbear-allfalldown/" target="_blank" rel="noopener noreferrer">🕳️ All Fall Down</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-title">
+        <h2><span class="rainbow-text">the vibe</span></h2>
+        <p>Trading-card stats, spray paint, broken signals, big feelings, and neon stubbornness.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>🧠 Wordplay</h3>
+          <p>Language as weapon, toy, shield, joke, and warning label. The album leans into double meanings and crooked little punchlines.</p>
+        </article>
+        <article class="card">
+          <h3>🌈 Ameliorist</h3>
+          <p>The whole thing still points toward repair. Loud does not mean hopeless. It means the signal survived the static.</p>
+        </article>
+        <article class="card">
+          <h3>🎛️ Browser Ritual</h3>
+          <p>Links, embeds, chaos, and an arcade-style slot machine because apparently an album rollout can also have bonus mechanics.</p>
+        </article>
+      </div>
+
+      <div class="glitch-block">
+        FILE NOTE: WORDPLAY is built for people who like jokes with teeth, music with dirt under its nails, and websites that refuse to sit quietly in the corner.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="listen">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>listen</h2>
+        <p>Embedded SoundCloud player for MATTBEAR. If the embed sulks, use the direct portal links. Web embeds are little glass divas.</p>
+      </div>
+
+      <div class="soundcloud-card">
+        <iframe
+          height="430"
+          scrolling="no"
+          allow="autoplay"
+          title="MATTBEAR SoundCloud player"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/mattbear86&auto_play=false&show_artwork=true&visual=true">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="slots">
+    <div class="wrap">
+      <div class="section-title">
+        <h2><span class="rainbow-text">wordslots</span></h2>
+        <p>Entertainment-only album slot toy. Overall target RTP: 94%. Free spins profile: 99.4%. No real money. No cash value. Just dopamine cosplay.</p>
+      </div>
+
+      <div class="slot-wrap">
+        <section class="machine" id="slotMachine" aria-label="WORDPLAY slot machine">
+          <div class="laugh-layer" id="laughLayer"></div>
+          <div class="machine-head">
+            <h2>🎰 WORDSLOTS</h2>
+            <div class="bank">
+              <span>credits</span>
+              <strong id="credits">1000</strong>
+            </div>
+          </div>
+
+          <div class="reels" id="reels"></div>
+
+          <div class="slot-controls">
+            <div class="panel-control">
+              <label for="bet">Bet</label>
+              <input id="bet" type="number" min="10" max="100" step="10" value="20">
+            </div>
+            <div class="panel-control">
+              <label>Free Spins</label>
+              <strong id="freeSpins">0</strong>
+            </div>
+            <div class="panel-control">
+              <label>Total Won</label>
+              <strong id="totalWon">0</strong>
+            </div>
+            <button class="btn primary" id="spinBtn" type="button" style="touch-action:manipulation;">SPIN</button>
+            <button class="btn" id="resetBtn" type="button" style="touch-action:manipulation;">RESET</button>
+          </div>
+
+          <div class="pots">
+            <div class="pot">
+              <h3>Left Pot</h3>
+              <div class="pot-value" id="leftPot">MINI</div>
+              <div class="jackpot-list">
+                <span>Mini • Major</span>
+                <span>Mega • Ultra</span>
+                <span>Normal jackpot spinner</span>
+              </div>
+            </div>
+            <div class="pot">
+              <h3>Middle Pot</h3>
+              <div class="pot-value" id="middlePot">FREE SPINS</div>
+              <div class="jackpot-list">
+                <span>5 scatters = 10 free spins</span>
+                <span>Free spins loaded at 99.4%</span>
+                <span>Bonus includes two spinners</span>
+              </div>
+            </div>
+            <div class="pot">
+              <h3>Right Pot</h3>
+              <div class="pot-value" id="rightPot">MAJOR</div>
+              <div class="jackpot-list">
+                <span>Mini • Major</span>
+                <span>Mega • Ultra</span>
+                <span>Normal jackpot spinner</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="slot-message" id="message">
+            Press spin. Wins pay left-to-right across all 10 paylines. Hit 5 rainbow scatters anywhere for 10 free spins. Track loops after you press play.
+          </div>
+          <div class="payline-note">Paylines: top, middle, bottom, V, inverted V, zig-zags, stairs, and diamond. Scatter pays anywhere.</div>
+        </section>
+
+        <aside class="side-panel">
+          <article class="card">
+            <h3>📊 Math Label</h3>
+            <div class="stat-grid">
+              <div class="statbox"><span>Target RTP</span><strong id="rtpReadout">94%</strong></div>
+              <div class="statbox"><span>Free Spin Profile</span><strong>99.4%</strong></div>
+              <div class="statbox"><span>Volatility</span><strong>Gritty</strong></div>
+              <div class="statbox"><span>Cash Value</span><strong>$0</strong></div>
+            </div>
+            <div class="rtp-control">
+              <label for="rtpSlider"><span>RTP Slider</span><strong id="rtpSliderValue">94%</strong></label>
+              <input id="rtpSlider" type="range" min="80" max="99.4" step="0.1" value="94">
+            </div>
+            <p class="disclaimer">
+              This is a simulated promotional game for the album site. It is not gambling, not a casino, not redeemable, and not connected to real money.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>🫙 Three Pots</h3>
+            <p>
+              Left and right pots trigger jackpot spinners with Mini, Major, Mega, and Ultra results.
+              The middle pot triggers free spins, then fires two jackpot-style spinners during the bonus.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>🧾 Spin Log</h3>
+            <div class="spin-log" id="spinLog"></div>
+          </article>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+
+  <section class="section" id="mini-choppa">
+    <div class="wrap">
+      <div class="section-title">
+        <h2><span class="rainbow-text">mini choppa</span></h2>
+        <p>A shrunken 8-pad Choppa built into the album page. Load a loop, slice it into 8 pads, tap/click/play with number keys, and make tiny browser damage.</p>
+      </div>
+
+      <div class="choppa-grid">
+        <div class="mini-choppa">
+          <h3>🔪 Mini Choppa</h3>
+          <p class="disclaimer">Touch, mouse, and keyboard controlled. Press Start Choppa Audio, load a loop, then hit Grid Chop 8.</p>
+
+          <div class="choppa-controls">
+            <button class="btn primary" id="choppaStart" type="button">Start Choppa Audio</button>
+            <label class="btn" for="choppaUpload">Load Loop</label>
+            <input id="choppaUpload" type="file" accept="audio/*" style="display:none">
+            <button class="btn" id="choppaDemo" type="button">Demo</button>
+            <button class="btn" id="choppaGrid" type="button">Grid Chop 8</button>
+            <button class="btn" id="choppaStop" type="button">Stop</button>
+          </div>
+
+          <div class="choppa-wave">
+            <canvas id="choppaWave"></canvas>
+          </div>
+
+          <div class="mini-pads" id="miniPads"></div>
+          <div class="choppa-status" id="choppaStatus">Load a loop or press Demo. Pads map to number keys 1–8.</div>
+        </div>
+
+        <aside class="choppa-side">
+          <div class="card">
+            <h3>🎛️ Mini Controls</h3>
+            <div class="panel-control">
+              <label for="choppaVol">Volume</label>
+              <input id="choppaVol" type="range" min="0" max="1" step="0.01" value="0.85">
+            </div>
+            <div class="panel-control">
+              <label for="choppaPitch">Pitch</label>
+              <input id="choppaPitch" type="range" min="-12" max="12" step="1" value="0">
+            </div>
+            <div class="panel-control">
+              <label for="choppaRelease">Release</label>
+              <input id="choppaRelease" type="range" min="0.03" max="1" step="0.01" value="0.12">
+            </div>
+          </div>
+          <div class="card">
+            <h3>⌨️ Pad Keys</h3>
+            <p>Use 1 2 3 4 5 6 7 8 on your keyboard, or just tap/click the pads like a civilized chaos goblin.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+<div class="miniplayer" aria-label="WORDPLAY mini player">
+  <button class="mini-btn" id="miniPlay" type="button">▶</button>
+  <div class="mini-copy">
+    <strong>Concrete Psalm - mattbear edit 2</strong>
+    <span>MATTBEAR mini player • loops automatically</span>
+    <input class="mini-range" id="miniSeek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Track position">
+  </div>
+  <button class="noise-toggle" id="noiseToggle" type="button">SLOT SFX: ON</button>
+  <audio id="miniAudio" preload="auto" loop preload="auto" loop src="assets/Concrete Psalm - mattbear edit 2.mp3"></audio>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <strong>MATTBEAR • WORDPLAY</strong>
+    <div>Chaos → Signal • Technology is quietly human. I am loudly not.</div>
+    <div style="margin-top:10px;">
+      <a href="https://bearicide.github.io/" target="_blank" rel="noopener noreferrer">Main Portal</a>
+      &nbsp;•&nbsp;
+      <a href="https://bearicide.github.io/mattbear-allfalldown/" target="_blank" rel="noopener noreferrer">All Fall Down</a>
+      &nbsp;•&nbsp;
+      <a href="https://soundcloud.com/mattbear86" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const symbols = [
+    { key:"bear", icon:"🐻", weight:4, pay:[0,0,8,35,140] },
+    { key:"word", icon:"🔤", weight:7, pay:[0,0,5,22,90] },
+    { key:"spray", icon:"🎨", weight:9, pay:[0,0,4,18,70] },
+    { key:"mic", icon:"🎤", weight:10, pay:[0,0,3,14,55] },
+    { key:"spark", icon:"⚡", weight:12, pay:[0,0,2,10,40] },
+    { key:"heart", icon:"💚", weight:14, pay:[0,0,2,8,28] },
+    { key:"static", icon:"▣", weight:16, pay:[0,0,1,6,20] },
+    { key:"scatter", icon:"🌈", weight:3, pay:[0,0,0,0,0], scatter:true }
+  ];
+
+  const jackpotTiers = [
+    { name:"MINI", mult:12, weight:64 },
+    { name:"MAJOR", mult:55, weight:27 },
+    { name:"MEGA", mult:220, weight:8 },
+    { name:"ULTRA", mult:900, weight:1 }
+  ];
+
+  const reelsEl = document.getElementById("reels");
+  const creditsEl = document.getElementById("credits");
+  const freeSpinsEl = document.getElementById("freeSpins");
+  const totalWonEl = document.getElementById("totalWon");
+  const messageEl = document.getElementById("message");
+  const spinLogEl = document.getElementById("spinLog");
+  const betEl = document.getElementById("bet");
+  const spinBtn = document.getElementById("spinBtn");
+  const slotMachine = document.getElementById("slotMachine");
+  const laughLayer = document.getElementById("laughLayer");
+  const rtpSlider = document.getElementById("rtpSlider");
+  const rtpSliderValue = document.getElementById("rtpSliderValue");
+  const rtpReadout = document.getElementById("rtpReadout");
+  const resetBtn = document.getElementById("resetBtn");
+
+  const miniAudio = document.getElementById("miniAudio");
+  const miniPlay = document.getElementById("miniPlay");
+  const miniSeek = document.getElementById("miniSeek");
+  const noiseToggle = document.getElementById("noiseToggle");
+
+  let audioCtx = null;
+  let sfxOn = true;
+
+  function getAudioCtx(){
+    if(!audioCtx){
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if(audioCtx.state === "suspended"){
+      audioCtx.resume().catch(() => {});
+    }
+    return audioCtx;
+  }
+
+
+  let limiter = null;
+
+  function getLimiter(){
+    const ctx = getAudioCtx();
+    if(!limiter){
+      limiter = ctx.createDynamicsCompressor();
+      limiter.threshold.setValueAtTime(-10, ctx.currentTime);
+      limiter.knee.setValueAtTime(18, ctx.currentTime);
+      limiter.ratio.setValueAtTime(10, ctx.currentTime);
+      limiter.attack.setValueAtTime(0.002, ctx.currentTime);
+      limiter.release.setValueAtTime(0.12, ctx.currentTime);
+      limiter.connect(ctx.destination);
+    }
+    return limiter;
+  }
+
+  function blastTone(freq, duration, type = "square", gain = 0.22, detune = 0){
+    if(!sfxOn) return;
+    const ctx = getAudioCtx();
+    const osc = ctx.createOscillator();
+    const amp = ctx.createGain();
+    const filter = ctx.createBiquadFilter();
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, ctx.currentTime);
+    osc.detune.setValueAtTime(detune, ctx.currentTime);
+    filter.type = "bandpass";
+    filter.frequency.setValueAtTime(freq * 1.8, ctx.currentTime);
+    filter.Q.setValueAtTime(8, ctx.currentTime);
+    amp.gain.setValueAtTime(0.0001, ctx.currentTime);
+    amp.gain.exponentialRampToValueAtTime(gain, ctx.currentTime + 0.012);
+    amp.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
+    osc.connect(filter);
+    filter.connect(amp);
+    amp.connect(getLimiter());
+    osc.start();
+    osc.stop(ctx.currentTime + duration + 0.02);
+  }
+
+  function noiseBurst(duration = 0.18, gain = 0.18){
+    if(!sfxOn) return;
+    const ctx = getAudioCtx();
+    const bufferSize = Math.floor(ctx.sampleRate * duration);
+    const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for(let i = 0; i < bufferSize; i++){
+      data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / bufferSize, 2.2);
+    }
+    const src = ctx.createBufferSource();
+    const amp = ctx.createGain();
+    const filter = ctx.createBiquadFilter();
+    filter.type = "highpass";
+    filter.frequency.value = 650;
+    amp.gain.value = gain;
+    src.buffer = buffer;
+    src.connect(filter);
+    filter.connect(amp);
+    amp.connect(getLimiter());
+    src.start();
+  }
+
+  function obnoxiousSpinSfx(){
+    if(!sfxOn) return;
+    noiseBurst(0.08, 0.08);
+    [220,277,330,415,554].forEach((freq, i) => {
+      setTimeout(() => blastTone(freq, 0.075, "square", 0.14, i * 7), i * 48);
+    });
+  }
+
+  function reelStopSfx(index){
+    if(!sfxOn) return;
+    blastTone(150 + index * 38, 0.09, "sawtooth", 0.16);
+    noiseBurst(0.045, 0.05);
+  }
+
+  function winSfx(amount){
+    if(!sfxOn) return;
+    const scale = [523,659,784,1046,1318,1568];
+    scale.forEach((freq, i) => {
+      setTimeout(() => blastTone(freq, 0.11, "square", amount > 200 ? 0.25 : 0.18), i * 70);
+    });
+    if(amount > 300){
+      setTimeout(() => noiseBurst(0.28, 0.22), 280);
+      setTimeout(() => blastTone(88, 0.5, "sawtooth", 0.3), 310);
+    }
+  }
+
+  function loseSfx(){
+    if(!sfxOn) return;
+    blastTone(180, 0.12, "sawtooth", 0.12);
+    setTimeout(() => blastTone(120, 0.18, "sawtooth", 0.1), 95);
+  }
+
+  function scatterSfx(){
+    if(!sfxOn) return;
+    noiseBurst(0.35, 0.25);
+    [740,880,1040,1320,1760].forEach((freq, i) => {
+      setTimeout(() => blastTone(freq, 0.16, "triangle", 0.26), i * 80);
+    });
+  }
+
+  function jackpotSfx(){
+    if(!sfxOn) return;
+    noiseBurst(0.45, 0.28);
+    for(let i = 0; i < 16; i++){
+      setTimeout(() => blastTone(220 + i * 65, 0.08, i % 2 ? "square" : "sawtooth", 0.22), i * 42);
+    }
+    setTimeout(() => blastTone(55, 0.75, "sawtooth", 0.34), 250);
+  }
+
+  miniPlay?.addEventListener("click", async () => {
+    if(!miniAudio) return;
+    if(miniAudio.paused){
+      try{
+        miniAudio.volume = 0.82;
+        await miniAudio.play();
+        miniPlay.textContent = "⏸";
+      }catch(e){
+        miniPlay.textContent = "▶";
+      }
+    }else{
+      miniAudio.pause();
+      miniPlay.textContent = "▶";
+    }
+  });
+
+  miniAudio?.addEventListener("timeupdate", () => {
+    if(!miniAudio.duration || !miniSeek) return;
+    miniSeek.value = String((miniAudio.currentTime / miniAudio.duration) * 100);
+  });
+
+  miniAudio?.addEventListener("ended", () => {
+    if(miniPlay) miniPlay.textContent = "▶";
+  });
+
+  miniSeek?.addEventListener("input", () => {
+    if(!miniAudio.duration) return;
+    miniAudio.currentTime = (Number(miniSeek.value) / 100) * miniAudio.duration;
+  });
+
+  noiseToggle?.addEventListener("click", () => {
+    sfxOn = !sfxOn;
+    noiseToggle.textContent = sfxOn ? "SLOT SFX: ON" : "SLOT SFX: OFF";
+    if(sfxOn){
+      blastTone(666, 0.08, "square", 0.14);
+      setTimeout(() => blastTone(999, 0.08, "square", 0.14), 85);
+    }
+  });
+
+  const leftPotEl = document.getElementById("leftPot");
+  const middlePotEl = document.getElementById("middlePot");
+  const rightPotEl = document.getElementById("rightPot");
+
+  let credits = 1000;
+  let freeSpins = 0;
+  let totalWon = 0;
+  let spinning = false;
+  let lastGrid = [];
+
+
+  function getTargetRtp(){
+    return Math.max(80, Math.min(99.4, Number(rtpSlider?.value || 94)));
+  }
+
+  function getRtpMultiplier(){
+    return getTargetRtp() / 94;
+  }
+
+  function updateRtpDisplay(){
+    const value = getTargetRtp().toFixed(1).replace(".0","");
+    if(rtpSliderValue) rtpSliderValue.textContent = value + "%";
+    if(rtpReadout) rtpReadout.textContent = value + "%";
+  }
+
+  function popLaugh(text = "LOL"){
+    if(!laughLayer) return;
+    const pop = document.createElement("div");
+    pop.className = "laugh-pop";
+    pop.textContent = text;
+    pop.style.left = (15 + Math.random() * 70) + "%";
+    pop.style.top = (25 + Math.random() * 55) + "%";
+    laughLayer.appendChild(pop);
+    setTimeout(() => pop.remove(), 1000);
+  }
+
+  function shakeMachine(){
+    slotMachine?.classList.remove("hysterical");
+    void slotMachine?.offsetWidth;
+    slotMachine?.classList.add("hysterical");
+    setTimeout(() => slotMachine?.classList.remove("hysterical"), 650);
+  }
+
+  function flashMessage(){
+    messageEl?.classList.remove("flash-message");
+    void messageEl?.offsetWidth;
+    messageEl?.classList.add("flash-message");
+    setTimeout(() => messageEl?.classList.remove("flash-message"), 1400);
+  }
+
+  function markPotHit(potName){
+    let target = null;
+    if(potName.includes("Left")) target = leftPotEl?.closest(".pot");
+    if(potName.includes("Right")) target = rightPotEl?.closest(".pot");
+    if(potName.includes("Middle")) target = middlePotEl?.closest(".pot");
+    if(!target) return;
+    target.classList.remove("pot-hit");
+    void target.offsetWidth;
+    target.classList.add("pot-hit");
+    setTimeout(() => target.classList.remove("pot-hit"), 900);
+  }
+
+  const paylines = [
+    { name:"TOP", rows:[0,0,0,0,0] },
+    { name:"MIDDLE", rows:[1,1,1,1,1] },
+    { name:"BOTTOM", rows:[2,2,2,2,2] },
+    { name:"V", rows:[0,1,2,1,0] },
+    { name:"INVERTED V", rows:[2,1,0,1,2] },
+    { name:"ZIG A", rows:[0,0,1,2,2] },
+    { name:"ZIG B", rows:[2,2,1,0,0] },
+    { name:"STAIRS DOWN", rows:[0,1,1,1,2] },
+    { name:"STAIRS UP", rows:[2,1,1,1,0] },
+    { name:"DIAMOND", rows:[1,0,1,2,1] }
+  ];
+
+  function weightedPick(list){
+    const total = list.reduce((sum,item) => sum + item.weight, 0);
+    let roll = Math.random() * total;
+    for(const item of list){
+      roll -= item.weight;
+      if(roll <= 0) return item;
+    }
+    return list[list.length - 1];
+  }
+
+  function drawGrid(){
+    const grid = [];
+    for(let reel = 0; reel < 5; reel++){
+      const col = [];
+      for(let row = 0; row < 3; row++){
+        col.push(weightedPick(symbols));
+      }
+      grid.push(col);
+    }
+    return grid;
+  }
+
+  function renderGrid(grid, winCoords = []){
+    reelsEl.innerHTML = "";
+    grid.forEach((col, reelIndex) => {
+      const reel = document.createElement("div");
+      reel.className = "reel";
+      col.forEach((symbol, rowIndex) => {
+        const cell = document.createElement("div");
+        const isWin = winCoords.some(([r,c]) => r === reelIndex && c === rowIndex);
+        cell.className = "symbol" + (isWin ? " win" : "") + (symbol.scatter ? " scatter" : "");
+        cell.textContent = symbol.icon;
+        cell.title = symbol.key;
+        reel.appendChild(cell);
+      });
+      reelsEl.appendChild(reel);
+    });
+  }
+
+  function countScatters(grid){
+    let count = 0;
+    grid.forEach(col => col.forEach(symbol => {
+      if(symbol.scatter) count++;
+    }));
+    return count;
+  }
+
+  function evaluateAllLines(grid, bet, freeMode){
+    const freeBoost = freeMode ? 1.057 : 1;
+    const rtpBoost = getRtpMultiplier();
+    const wins = [];
+    let payout = 0;
+    const coordSet = new Set();
+
+    paylines.forEach(line => {
+      const first = grid[0][line.rows[0]];
+      if(first.scatter) return;
+
+      let count = 1;
+      for(let reel = 1; reel < 5; reel++){
+        const row = line.rows[reel];
+        if(grid[reel][row].key === first.key) count++;
+        else break;
+      }
+
+      const base = first.pay[count - 1] || 0;
+      if(base > 0){
+        const linePay = Math.round(base * bet * freeBoost * rtpBoost / 10);
+        payout += linePay;
+        const coords = Array.from({length:count}, (_,i) => [i, line.rows[i]]);
+        coords.forEach(([r,c]) => coordSet.add(r + "," + c));
+        wins.push({ name: line.name, payout: linePay, count, symbol: first, coords });
+      }
+    });
+
+    const coords = Array.from(coordSet).map(pair => pair.split(",").map(Number));
+    return { payout, wins, coords };
+  }
+
+  function jackpotSpin(bet){
+    const tier = weightedPick(jackpotTiers);
+    return { tier:tier.name, payout:Math.round(tier.mult * bet * getRtpMultiplier()) };
+  }
+
+  function maybePotBonus(bet, freeMode){
+    const hits = [];
+    const chance = freeMode ? 0.115 : 0.052;
+
+    if(Math.random() < chance){
+      const left = jackpotSpin(bet);
+      hits.push({ pot:"Left Pot", ...left });
+      leftPotEl.textContent = left.tier;
+      leftPotEl.classList.add("pulse");
+      setTimeout(() => leftPotEl.classList.remove("pulse"), 900);
+    }
+
+    if(Math.random() < chance){
+      const right = jackpotSpin(bet);
+      hits.push({ pot:"Right Pot", ...right });
+      rightPotEl.textContent = right.tier;
+      rightPotEl.classList.add("pulse");
+      setTimeout(() => rightPotEl.classList.remove("pulse"), 900);
+    }
+
+    return hits;
+  }
+
+  function addLog(text){
+    const item = document.createElement("div");
+    item.className = "log-item";
+    item.textContent = text;
+    spinLogEl.prepend(item);
+    while(spinLogEl.children.length > 12){
+      spinLogEl.removeChild(spinLogEl.lastChild);
+    }
+  }
+
+
+  function getSafeBet(){
+    const raw = Number(betEl.value) || 20;
+    const safe = Math.max(10, Math.min(100, Math.round(raw / 10) * 10));
+    betEl.value = String(safe);
+    return safe;
+  }
+
+  function updateStats(){
+    creditsEl.textContent = credits;
+    freeSpinsEl.textContent = freeSpins;
+    totalWonEl.textContent = totalWon;
+  }
+
+  async function spin(){
+    if(spinning) return;
+    const bet = getSafeBet();
+    const freeMode = freeSpins > 0;
+
+    if(!freeMode && credits < bet){
+      messageEl.textContent = "Not enough credits. Resetting demo credits to 1000 because this is pretend and mercy is free.";
+      credits = 1000;
+      updateStats();
+      return;
+    }
+
+    spinning = true;
+    spinBtn.disabled = true;
+    obnoxiousSpinSfx();
+    shakeMachine();
+    reelsEl.classList.add("shake");
+    reelsEl.classList.add("reel-madness");
+
+    if(freeMode){
+      freeSpins--;
+    } else {
+      credits -= bet;
+    }
+
+    for(let i = 0; i < 9; i++){
+      renderGrid(drawGrid());
+      document.querySelectorAll(".symbol").forEach(cell => cell.classList.add("spin-blur"));
+      reelStopSfx(i % 5);
+      await new Promise(resolve => setTimeout(resolve, 55 + i * 14));
+    }
+
+    const grid = drawGrid();
+    lastGrid = grid;
+
+    const scatters = countScatters(grid);
+    const lineResult = evaluateAllLines(grid, bet, freeMode);
+    let win = lineResult.payout;
+    const potHits = maybePotBonus(bet, freeMode);
+
+    potHits.forEach(hit => win += hit.payout);
+    if(potHits.length){ jackpotSfx(); potHits.forEach(hit => markPotHit(hit.pot)); }
+
+    if(scatters >= 5){
+      scatterSfx();
+      popLaugh("FREE SPINS");
+      shakeMachine();
+      freeSpins += 10;
+      middlePotEl.textContent = "10 FREE";
+      middlePotEl.classList.add("pulse");
+      setTimeout(() => {
+        middlePotEl.classList.remove("pulse");
+        middlePotEl.textContent = "FREE SPINS";
+      }, 1100);
+
+      const bonusA = jackpotSpin(bet);
+      const bonusB = jackpotSpin(bet);
+      win += bonusA.payout + bonusB.payout;
+      potHits.push({ pot:"Middle Spinner A", ...bonusA }, { pot:"Middle Spinner B", ...bonusB });
+    }
+
+    credits += win;
+    totalWon += win;
+
+    renderGrid(grid, lineResult.coords);
+    document.querySelectorAll(".symbol.win").forEach(cell => cell.classList.add("big-win"));
+    updateStats();
+
+    let msg = freeMode ? "FREE SPIN: " : "SPIN: ";
+    if(lineResult.wins.length){
+      const topWins = lineResult.wins.slice(0, 3).map(w => `${w.name}: ${w.count}x ${w.symbol.icon} +${w.payout}`).join(" • ");
+      msg += `${lineResult.wins.length} payline win(s): ${topWins}. `;
+      if(lineResult.wins.length > 3) msg += `Plus ${lineResult.wins.length - 3} more line(s). `;
+    } else {
+      msg += "No payline match. ";
+    }
+
+    if(scatters >= 5){
+      msg += `🌈 ${scatters} scatters triggered 10 free spins plus two middle spinners. `;
+    }
+
+    if(potHits.length){
+      msg += potHits.map(hit => `${hit.pot} ${hit.tier} +${hit.payout}`).join(" • ");
+    }
+
+    if(win === 0){
+      msg += "The reels chose violence.";
+    } else {
+      msg += ` Total win: ${win}.`;
+    }
+
+    if(win > 0){ winSfx(win); popLaugh(win > 300 ? "BIG WIN" : "HAHA"); flashMessage(); } else { loseSfx(); popLaugh("LOL"); }
+    messageEl.textContent = msg;
+    addLog(msg);
+    reelsEl.classList.remove("shake");
+    reelsEl.classList.remove("reel-madness");
+    spinning = false;
+    spinBtn.disabled = false;
+  }
+
+
+  resetBtn?.addEventListener("click", () => {
+    credits = 1000;
+    freeSpins = 0;
+    totalWon = 0;
+    updateStats();
+    renderGrid(drawGrid());
+    messageEl.textContent = "Demo credits reset. The machine has been forgiven, for now.";
+    addLog("Credits reset to 1000.");
+    if(sfxOn){
+      blastTone(440, 0.08, "triangle", 0.12);
+      setTimeout(() => blastTone(660, 0.08, "triangle", 0.12), 90);
+    }
+  });
+
+
+  /* Mini Choppa: 8-pad shrunken sampler */
+  const choppaStart = document.getElementById("choppaStart");
+  const choppaUpload = document.getElementById("choppaUpload");
+  const choppaDemo = document.getElementById("choppaDemo");
+  const choppaGrid = document.getElementById("choppaGrid");
+  const choppaStop = document.getElementById("choppaStop");
+  const miniPads = document.getElementById("miniPads");
+  const choppaStatus = document.getElementById("choppaStatus");
+  const choppaWave = document.getElementById("choppaWave");
+  const choppaVol = document.getElementById("choppaVol");
+  const choppaPitch = document.getElementById("choppaPitch");
+  const choppaRelease = document.getElementById("choppaRelease");
+
+  let choppaBuffer = null;
+  let choppaSlices = [];
+  let choppaSources = [];
+
+  function setChoppaStatus(text){
+    if(choppaStatus) choppaStatus.textContent = text;
+  }
+
+  function stopChoppa(){
+    choppaSources.forEach(src => {
+      try{ src.stop(); }catch(e){}
+    });
+    choppaSources = [];
+  }
+
+  function renderMiniPads(){
+    if(!miniPads) return;
+    miniPads.innerHTML = "";
+    for(let i = 0; i < 8; i++){
+      const pad = document.createElement("button");
+      pad.type = "button";
+      pad.className = "mini-pad" + (choppaSlices[i] ? " loaded" : "");
+      pad.dataset.pad = String(i);
+      pad.innerHTML = `<span>${i + 1}</span><small>${choppaSlices[i] ? choppaSlices[i].start.toFixed(2) + "s" : "empty"}</small>`;
+      pad.addEventListener("pointerdown", event => {
+        event.preventDefault();
+        playMiniSlice(i);
+      });
+      miniPads.appendChild(pad);
+    }
+  }
+
+  function drawChoppaWave(){
+    if(!choppaWave) return;
+    const rect = choppaWave.getBoundingClientRect();
+    choppaWave.width = Math.max(320, Math.floor(rect.width * window.devicePixelRatio));
+    choppaWave.height = Math.max(80, Math.floor(rect.height * window.devicePixelRatio));
+    const c = choppaWave.getContext("2d");
+    c.clearRect(0,0,choppaWave.width,choppaWave.height);
+    c.fillStyle = "#030306";
+    c.fillRect(0,0,choppaWave.width,choppaWave.height);
+    if(!choppaBuffer) return;
+    const data = choppaBuffer.getChannelData(0);
+    const step = Math.ceil(data.length / choppaWave.width);
+    const mid = choppaWave.height / 2;
+    c.strokeStyle = "#31eaff";
+    c.lineWidth = 2;
+    c.beginPath();
+    for(let x = 0; x < choppaWave.width; x++){
+      let min = 1, max = -1;
+      for(let j = 0; j < step; j++){
+        const v = data[x * step + j] || 0;
+        if(v < min) min = v;
+        if(v > max) max = v;
+      }
+      c.moveTo(x, mid + min * mid * .82);
+      c.lineTo(x, mid + max * mid * .82);
+    }
+    c.stroke();
+
+    c.strokeStyle = "rgba(255,216,107,.8)";
+    choppaSlices.forEach(slice => {
+      const x = (slice.start / choppaBuffer.duration) * choppaWave.width;
+      c.beginPath();
+      c.moveTo(x,0);
+      c.lineTo(x,choppaWave.height);
+      c.stroke();
+    });
+  }
+
+  async function startChoppaAudio(){
+    getAudioCtx();
+    setChoppaStatus("Mini Choppa audio ready. Load a loop or press Demo.");
+  }
+
+  function choppaGridEight(){
+    if(!choppaBuffer){
+      setChoppaStatus("Load a loop first, tiny chaos engineer.");
+      return;
+    }
+    choppaSlices = [];
+    const step = choppaBuffer.duration / 8;
+    for(let i = 0; i < 8; i++){
+      choppaSlices.push({ start: i * step, end: (i + 1) * step });
+    }
+    renderMiniPads();
+    drawChoppaWave();
+    setChoppaStatus("Grid Chop 8 ready. Tap pads or use number keys 1–8.");
+  }
+
+  async function loadChoppaFile(file){
+    const ctx = getAudioCtx();
+    const arr = await file.arrayBuffer();
+    choppaBuffer = await ctx.decodeAudioData(arr);
+    choppaGridEight();
+    setChoppaStatus("Loaded " + file.name + " and chopped into 8 pads.");
+  }
+
+  function makeChoppaDemo(){
+    const ctx = getAudioCtx();
+    const dur = 2.4;
+    const sr = ctx.sampleRate;
+    const b = ctx.createBuffer(1, Math.floor(sr * dur), sr);
+    const d = b.getChannelData(0);
+    function hit(time, freq, amp){
+      const start = Math.floor(time * sr);
+      for(let i = 0; i < sr * .22; i++){
+        const t = i / sr;
+        const idx = start + i;
+        if(idx >= d.length) break;
+        d[idx] += Math.sin(2 * Math.PI * freq * t) * Math.exp(-t * 14) * amp;
+        d[idx] += (Math.random() * 2 - 1) * Math.exp(-t * 40) * amp * .22;
+      }
+    }
+    for(let i = 0; i < 8; i++){
+      hit(i * dur / 8, 90 + i * 42, .7);
+    }
+    for(let i = 0; i < d.length; i++) d[i] = Math.tanh(d[i] * 1.4);
+    choppaBuffer = b;
+    choppaGridEight();
+    setChoppaStatus("Demo loop loaded. Mini pads are armed.");
+  }
+
+  function flashMiniPad(i){
+    const pad = miniPads?.querySelector(`[data-pad="${i}"]`);
+    if(!pad) return;
+    pad.classList.add("active");
+    setTimeout(() => pad.classList.remove("active"), 160);
+  }
+
+  function playMiniSlice(i){
+    const ctx = getAudioCtx();
+    if(!choppaBuffer || !choppaSlices[i]){
+      setChoppaStatus("No slice loaded on that pad.");
+      return;
+    }
+    const slice = choppaSlices[i];
+    const src = ctx.createBufferSource();
+    const gain = ctx.createGain();
+    const now = ctx.currentTime;
+    const vol = Number(choppaVol?.value || .85);
+    const rel = Number(choppaRelease?.value || .12);
+    const pitch = Number(choppaPitch?.value || 0);
+    const dur = Math.max(.04, slice.end - slice.start);
+
+    src.buffer = choppaBuffer;
+    src.playbackRate.value = Math.pow(2, pitch / 12);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(vol, now + .01);
+    gain.gain.setValueAtTime(vol, now + Math.max(.02, dur - rel));
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+    src.connect(gain);
+    gain.connect(getLimiter());
+    src.start(now, slice.start, dur);
+    src.stop(now + dur + .03);
+    choppaSources.push(src);
+    src.onended = () => choppaSources = choppaSources.filter(s => s !== src);
+    flashMiniPad(i);
+  }
+
+  choppaStart?.addEventListener("click", startChoppaAudio);
+  choppaUpload?.addEventListener("change", event => {
+    const file = event.target.files?.[0];
+    if(file) loadChoppaFile(file).catch(() => setChoppaStatus("That file would not decode. Try MP3 or WAV."));
+  });
+  choppaDemo?.addEventListener("click", makeChoppaDemo);
+  choppaGrid?.addEventListener("click", choppaGridEight);
+  choppaStop?.addEventListener("click", stopChoppa);
+  window.addEventListener("resize", drawChoppaWave);
+  window.addEventListener("keydown", event => {
+    const keys = ["1","2","3","4","5","6","7","8"];
+    const idx = keys.indexOf(event.key);
+    if(idx >= 0) playMiniSlice(idx);
+  });
+  renderMiniPads();
+
+
+  function init(){
+    renderGrid(drawGrid());
+    updateStats();
+    addLog("WORDPLAY slot loaded. Target RTP label: 94%. Free spins profile: 99.4%.");
+    spinBtn.addEventListener("click", spin);
+    rtpSlider?.addEventListener("input", updateRtpDisplay);
+    updateRtpDisplay();
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>
