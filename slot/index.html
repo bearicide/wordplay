@@ -2,13 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#07080d" />
   <title>WORDPLAY WORDSLOTS | MATTBEAR</title>
   <meta name="description" content="WORDPLAY WORDSLOTS by MATTBEAR - a neon Scrabble-inspired entertainment-only browser slot." />
+  <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <div id="preloader" class="preloader" aria-live="polite">
+    <div class="preloader-card">
+      <div class="loader-logo"><span>WORD</span>PLAY</div>
+      <div class="loader-bar"><i></i></div>
+      <p>Loading neon word machine...</p>
+    </div>
+  </div>
+
+  <div class="rain" aria-hidden="true"></div>
   <div class="skyline" aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
   <main class="wrap">
     <header class="hero">
       <p class="kicker">MATTBEAR • entertainment only • fake money</p>
@@ -29,10 +41,8 @@
         <div><span>Free Spins</span><strong id="freeSpins">0</strong></div>
       </div>
 
-      <div class="reel-frame">
-        <div class="payline payline-top"></div>
-        <div class="payline payline-mid"></div>
-        <div class="payline payline-bottom"></div>
+      <div class="reel-frame" id="reelFrame">
+        <svg id="paylineSvg" class="payline-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
         <div id="reels" class="reels" aria-live="polite"></div>
       </div>
 
@@ -62,10 +72,19 @@
       </article>
       <article class="panel">
         <h2>Rules</h2>
-        <p>Five reels, three rows, five paylines. WILD substitutes. FREE SPINS awards three free spins. BONUS pays instant fake-money hits. This is for entertainment only, because lawsuits are where fun goes to die.</p>
+        <p>Five reels, three rows, five paylines. WILD substitutes. FREE SPINS awards three free spins. BONUS and REWIND use splash screens. This is for entertainment only, because lawsuits are where fun goes to die.</p>
       </article>
     </section>
   </main>
+
+  <div id="splashModal" class="splash-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="splash-card">
+      <div id="splashBadge" class="splash-badge">BONUS</div>
+      <h2 id="splashTitle">Bonus Triggered</h2>
+      <p id="splashText">Right on - Stay up! Good luck!</p>
+      <button id="splashContinue" class="btn primary" type="button">CONTINUE</button>
+    </div>
+  </div>
 
   <footer class="footer">MATTBEAR • WORDPLAY • <a href="https://bearicide.github.io" rel="noopener">bearicide.github.io</a></footer>
   <script src="js/slot.js"></script>
