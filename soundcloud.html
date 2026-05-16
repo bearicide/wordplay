@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WORDPLAY — SoundCloud Playlist</title>
+<meta name="theme-color" content="#050509">
+<style>
+:root{--bg:#050509;--ink:#f8fbff;--muted:#b9c0cc;--cyan:#31eaff;--pink:#ff3bdc;--green:#35ff86;--yellow:#ffe850;--line:rgba(255,255,255,.16);--grad:linear-gradient(90deg,#ff2e51,#ff8c1a,#ffe850,#35ff86,#31eaff,#5278ff,#b14cff,#ff3bdc)}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:Bahnschrift,Arial Narrow,Arial,sans-serif;background:radial-gradient(circle at 15% 10%,rgba(255,46,81,.25),transparent 32%),radial-gradient(circle at 78% 5%,rgba(49,234,255,.22),transparent 30%),linear-gradient(180deg,#06060b,#11111b 45%,#050509);min-height:100vh}.wrap{width:min(1120px,calc(100% - 28px));margin:0 auto;padding:18px 0 44px}.top{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:14px 16px;border:1px solid var(--line);border-radius:22px;background:rgba(0,0,0,.42);backdrop-filter:blur(14px)}a{color:inherit;text-decoration:none}.top a{color:var(--cyan);font-weight:900}.title{font-family:Impact,Arial Black,sans-serif;font-size:clamp(3.4rem,12vw,8rem);line-height:.82;letter-spacing:-.06em;margin:30px 0 8px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}.sub{color:#dce4f3;font-size:clamp(1rem,3vw,1.2rem);line-height:1.5;max-width:780px}.card{margin-top:20px;border:1px solid var(--line);border-radius:26px;padding:16px;background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.045)),rgba(0,0,0,.22);box-shadow:0 24px 70px rgba(0,0,0,.35);overflow:hidden}.embed{border-radius:20px;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,.12)}iframe{display:block;width:100%;height:640px;border:0}.buttons{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.btn{border:1px solid var(--line);border-radius:999px;background:rgba(0,0,0,.34);color:#fff;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:12px 15px;cursor:pointer}.btn.primary{background:var(--grad);color:#050509;border:none}.note{color:var(--muted);line-height:1.55;margin-top:12px}@media(max-width:700px){.wrap{width:min(100% - 18px,1120px)}.top{align-items:flex-start}.card{padding:10px;border-radius:20px}iframe{height:560px}.buttons{display:grid}.btn{width:100%}.title{font-size:clamp(3rem,20vw,5rem)}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <nav class="top"><a href="index.html">← WORDPLAY</a><strong>MATTBEAR SoundCloud</strong><a href="https://soundcloud.com/mattbear86" target="_blank" rel="noopener">Open SoundCloud</a></nav>
+  <h1 class="title">WORDPLAY<br>LISTEN</h1>
+  <p class="sub">Full-size SoundCloud display using the same expanded player standard as All Fall Down: artwork on, visual mode on, full playlist/profile surface, and mobile height preserved.</p>
+  <section class="card">
+    <div class="buttons">
+      <button class="btn primary" data-url="https://soundcloud.com/mattbear86">MATTBEAR Profile</button>
+      <button class="btn" data-url="https://soundcloud.com/mattbear86/sets">Playlists</button>
+      <button class="btn" data-url="https://soundcloud.com/mattbear86/tracks">Tracks</button>
+    </div>
+    <div class="embed"><iframe id="sc" title="MATTBEAR SoundCloud full player" allow="autoplay" src=""></iframe></div>
+    <p class="note">Playlist-specific URLs can replace the buttons once a final WORDPLAY playlist slug is confirmed.</p>
+  </section>
+</main>
+<script>
+const sc=document.getElementById('sc');
+function embed(url){return 'https://w.soundcloud.com/player/?url='+encodeURIComponent(url)+'&color=%23ff3bdc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'}
+function load(url){sc.src=embed(url)}
+document.querySelectorAll('[data-url]').forEach(btn=>btn.addEventListener('click',()=>load(btn.dataset.url)));
+load('https://soundcloud.com/mattbear86');
+</script>
+</body>
+</html>
